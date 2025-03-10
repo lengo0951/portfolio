@@ -15,21 +15,21 @@ function App() {
     {
       title: "Paradise Resort",
       description: "Paradise Resort provides users with a seamless experience for booking rooms, viewing accommodations, checking in/out, and making payments. Administrators can efficiently manage the hotel by creating and overseeing room availability and reservations",
-      image: "/public/Paradise-Resort.png",
+      image: "https://i.postimg.cc/gcRz49cN/Paradise-Resort.png",
       technologies: ["HTML", "JavaScript", "TypeScript", "NestJS", "PostgreSQL"],
       githubUrl: "https://github.com/lengo0951/Paradise-Resort.git"
     },
     {
       title: "TableTick",
       description: "TableTick is a time management and timeline tracking application that helps users efficiently organize their schedules and notes",
-      image: "/public/TableTick.jpg",
+      image: "https://i.postimg.cc/XvmWcLTR/Table-Tick.jpg",
       technologies: ["C#", "Firebase"],
       githubUrl: "https://github.com/lengo0951/TableTick"
     },
     {
       title: "CryptoPrice Notifier Bot",
       description: "CryptoPrice Notifier Bot is a Telegram bot designed to provide real-time cryptocurrency price updates and customizable alerts for key market indicators. Users can configure notifications based on price changes, trading volume, and other relevant metrics to stay informed",
-      image: "/public/cryptocurrency-bot-telegram.png",
+      image: "https://i.postimg.cc/T2yL6HdD/cryptocurrency-bot-telegram.png",
       technologies: ["JavaScript", "Telegram Bot API", "Node.js", "Axios", "Webhooks"],
       githubUrl: "https://github.com/lengo0951/CryptoPriceBot.git"
     }
@@ -60,7 +60,7 @@ function App() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             <div className="flex-1">
               <img
-                src="/public/avatar.jpg"
+                src="https://i.postimg.cc/Dw3b5dKb/avatar.jpg"
                 alt="Profile"
                 className="rounded-full w-64 h-64 object-cover border-4 border-white shadow-xl mx-auto md:mx-0"
               />
