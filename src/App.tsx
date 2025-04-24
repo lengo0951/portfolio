@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { Github, Linkedin, Mail, Facebook, MapPin, Building2, GraduationCap, Shield } from 'lucide-react';
+import { Github, Linkedin, Mail, Facebook, MapPin, Building2, GraduationCap, Code } from 'lucide-react';
 import Timeline from './components/Timeline';
 import ProjectCard from './components/ProjectCard';
-import AwardCard from './components/AwardCard';
 import ThemeToggle from './components/ThemeToggle';
+import SkillsEducation from './components/SkillsEducation';
+import SectionContainer from './components/SectionContainer';
 import AOS from 'aos';
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
       description: "Paradise Resort provides users with a seamless experience for booking rooms, viewing accommodations, checking in/out, and making payments. Administrators can efficiently manage the hotel by creating and overseeing room availability and reservations",
       image: "https://i.postimg.cc/gcRz49cN/Paradise-Resort.png",
       technologies: ["HTML", "JavaScript", "TypeScript", "NestJS", "PostgreSQL"],
-      githubUrl: "https://github.com/lengo0951/Paradise-Resort.git"
+      githubUrl: "https://github.com/lengo0951/Paradise-Resort.git",
+      webUrl: "https://weekly-abby-lengo0951-13609064.koyeb.app/"
     },
     {
       title: "TableTick",
@@ -31,22 +33,8 @@ function App() {
       description: "CryptoPrice Notifier Bot is a Telegram bot designed to provide real-time cryptocurrency price updates and customizable alerts for key market indicators. Users can configure notifications based on price changes, trading volume, and other relevant metrics to stay informed",
       image: "https://i.postimg.cc/T2yL6HdD/cryptocurrency-bot-telegram.png",
       technologies: ["JavaScript", "Telegram Bot API", "Node.js", "Axios", "Webhooks"],
-      githubUrl: "https://github.com/lengo0951/CryptoPriceBot.git"
-    }
-  ];
-
-  const awards = [
-    {
-      title: "Cybersecurity Excellence Award",
-      organization: "National Security Conference 2023",
-      year: "2023",
-      description: "Recognition for innovative security solution development"
-    },
-    {
-      title: "Best Security Project",
-      organization: "University Security Competition",
-      year: "2022",
-      description: "First place in the annual security projects showcase"
+      githubUrl: "https://github.com/lengo0951/CryptoPriceBot.git",
+      telegramUrl: "https://t.me/coolstar17_bot"
     }
   ];
 
@@ -98,50 +86,47 @@ function App() {
         </div>
       </section>
 
-      {/* Experience Timeline */}
-      {/*<section className="py-20 px-4 sm:px-6 lg:px-8 dark:bg-gray-900">
+      {/* Education Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2
-              className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center"
-              data-aos="fade-up"
+          <SectionContainer
+            title="Education"
+            icon={<GraduationCap className="w-8 h-8" />}
           >
-          Work Experience
-          </h2>
-        <Timeline />
+            <div className="pl-8">
+              <p className="text-gray-600 dark:text-gray-300">
+                <span className="font-semibold">University of Information Technology</span> - Information Security
+              </p>
+              <p className="text-gray-500 dark:text-gray-400">2022 - Present | GPA: 3.2/4.0</p>
+            </div>
+          </SectionContainer>
         </div>
-      </section>*/}
+      </section>
+
       {/* Projects */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 dark:bg-gray-900">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center" data-aos="fade-up">
-            Projects
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
-                <ProjectCard {...project} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      {/* Awards & Activities */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center" data-aos="fade-up">
-            Awards & Activities
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {awards.map((award, index) => (
-              <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
-                <AwardCard {...award} />
-              </div>
-            ))}
-          </div>
+          <SectionContainer
+            title="Projects"
+            icon={<Code className="w-8 h-8" />}
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project, index) => (
+                <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+                  <ProjectCard {...project} />
+                </div>
+              ))}
+            </div>
+          </SectionContainer>
         </div>
       </section>
 
-
+      {/* Skills */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <SkillsEducation />
+        </div>
+      </section>
     </div>
   );
 }

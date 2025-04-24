@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github } from 'lucide-react';
+import { Github, Globe, Send } from 'lucide-react';
 
 interface ProjectCardProps {
   title: string;
@@ -7,6 +7,8 @@ interface ProjectCardProps {
   image: string;
   technologies: string[];
   githubUrl: string;
+  webUrl?: string;
+  telegramUrl?: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -14,7 +16,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   image,
   technologies,
-  githubUrl
+  githubUrl,
+  webUrl,
+  telegramUrl
 }) => {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -39,15 +43,39 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </span>
           ))}
         </div>
-        <a
-          href={githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
-        >
-          <Github size={20} />
-          View on GitHub
-        </a>
+        <div className="flex flex-wrap gap-2">
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 min-w-[120px] inline-flex items-center justify-center gap-2 px-4 py-2 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
+          >
+            <Github size={20} />
+            <span className="whitespace-nowrap">View on GitHub</span>
+          </a>
+          {webUrl && (
+            <a
+              href={webUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 min-w-[120px] inline-flex items-center justify-center gap-2 px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors"
+            >
+              <Globe size={20} />
+              <span className="whitespace-nowrap">Visit Website</span>
+            </a>
+          )}
+          {telegramUrl && (
+            <a
+              href={telegramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 min-w-[120px] inline-flex items-center justify-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            >
+              <Send size={20} />
+              <span className="whitespace-nowrap">Try Bot</span>
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
